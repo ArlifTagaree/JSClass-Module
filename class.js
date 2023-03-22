@@ -62,32 +62,67 @@ class Animal {
 
 
 //try Class by myself reference Project
+// class Users {
+//     constructor(email,password,displayName,height,weight,gender,image){
+//         this.email = email;
+//         this.password = password;
+//         this.displayName = displayName;
+//         this.height = height;
+//         this.weight = weight;
+//         this.gender = gender;
+//         this.image = image;
+//     }
+//     get showEmail(){
+//         return this.email;
+//     }
+//     get showDisplay(){
+//         return this.displayName;
+//     }
+//     get showImage(){
+//         return this.image;
+//     }
+// }
+
+// class userLogin extends Users {
+//     constructor(email, password, isLogin){     
+//         super(email, password, isLogin);
+//         this.isLogin = isLogin;
+//     }
+// }
+// const pramote = new userLogin('test@gmail.com', '123456789', 1);
+// console.log(pramote.showEmail);
+
+
+//ex4
+
 class Users {
-    constructor(email,password,displayName,height,weight,gender,image){
-        this.email = email;
-        this.password = password;
-        this.displayName = displayName;
-        this.height = height;
-        this.weight = weight;
-        this.gender = gender;
-        this.image = image;
+    constructor(options) {
+        this.email = options.email;
+        this.password = options.password;
+        this.displayName = options.displayName;
+        this.height = options.height;
+        this.weight = options.weight;
+        this.gender = options.gender;
+        this.image = options.image;
     }
-    get showEmail(){
-        return this.email;
-    }
-    get showDisplay(){
-        return this.displayName;
-    }
-    get showImage(){
-        return this.image;
-    }
+    // ... other methods ...
 }
 
-class userLogin extends Users {
-    constructor(email, password, isLogin){     
-        super(email, password, isLogin);
-        this.isLogin = isLogin;
+class ChildUsers extends Users {
+    constructor(options) {
+        super({
+            email: options.email,
+            displayName: options.displayName,
+            image: options.image,
+        });
     }
+
+    // You can add methods specific to ChildUsers here
 }
-const pramote = new userLogin('test@gmail.com', '123456789', 1);
-console.log(pramote.showEmail);
+
+// Example usage
+const childUser = new ChildUsers({ email: 'email@example.com', displayName: 'John Doe', image: 'path/to/image.jpg' });
+console.log(childUser.showEmail); // 'email@example.com'
+console.log(childUser.showDisplay); // 'John Doe'
+console.log(childUser.showImage); // 'path/to/image.jpg'
+console.log(childUser.image);
