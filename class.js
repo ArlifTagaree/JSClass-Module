@@ -40,6 +40,26 @@ const carList = new Car();
 // got all undefined
 console.log(carList);
 
+// ============================= EX 3 =============================
+class Animal {
+    constructor() {
+      this.type = "unknown";
+      this.car = "unknown";
+    }
+  }
+  class Dog extends Animal {
+    constructor() {
+      super(); // calling parent constructor with no arguments
+      this.type = "dog";
+      this.car = 'benz';
+    }
+  }
+  const myDog = new Dog();
+  console.log(myDog.type); // Output: "dog"
+  console.log(myDog.car); // Output: "benz"
+
+
+
 
 //try Class by myself reference Project
 class Users {
