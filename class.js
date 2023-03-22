@@ -62,35 +62,35 @@ class Animal {
 
 
 //try Class by myself reference Project
-// class Users {
-//     constructor(email,password,displayName,height,weight,gender,image){
-//         this.email = email;
-//         this.password = password;
-//         this.displayName = displayName;
-//         this.height = height;
-//         this.weight = weight;
-//         this.gender = gender;
-//         this.image = image;
-//     }
-//     get showEmail(){
-//         return this.email;
-//     }
-//     get showDisplay(){
-//         return this.displayName;
-//     }
-//     get showImage(){
-//         return this.image;
-//     }
-// }
+class Users {
+    constructor(email,password,displayName,height,weight,gender,image){
+        this.email = email;
+        this.password = password;
+        this.displayName = displayName;
+        this.height = height;
+        this.weight = weight;
+        this.gender = gender;
+        this.image = image;
+    }
+    get showEmail(){
+        return this.email;
+    }
+    get showDisplay(){
+        return this.displayName;
+    }
+    get showImage(){
+        return this.image;
+    }
+}
 
-// class userLogin extends Users {
-//     constructor(email, password, isLogin){     
-//         super(email, password, isLogin);
-//         this.isLogin = isLogin;
-//     }
-// }
-// const pramote = new userLogin('test@gmail.com', '123456789', 1);
-// console.log(pramote.showEmail);
+class userLogin extends Users {
+    constructor(email, password, isLogin){     
+        super(email, password, isLogin);
+        this.isLogin = isLogin;
+    }
+}
+const pramote = new userLogin('test@gmail.com', '123456789', 1);
+console.log(pramote.showEmail);
 
 
 //ex4
